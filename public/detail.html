@@ -94,13 +94,13 @@
             console.log(result.data());
 
             판매자uid = result.data().uid;
-            상품명 = result.data().제목;
+            상품명 = result.data().prodTitle;
 
-            $('.author').html('올린사람 : ' + result.data().이름);
-            $('.date').html('올린날짜 : ' + result.data().날짜);
-            $('.title').html(result.data().제목);
-            $('.price').html(result.data().가격);
-            $('.detail-pic').css('background-image', `url(${result.data().이미지})` );
+            $('.author').html('올린사람 : ' + result.data().uploadUserName);
+            $('.date').html('올린날짜 : ' + result.data().prodUploadDate);
+            $('.title').html(result.data().prodTitle);
+            $('.price').html(result.data().prodPrice);
+            $('.detail-pic').css('background-image', `url(${result.data().prodImageUrl})` );
 
         });
 
