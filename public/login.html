@@ -108,7 +108,9 @@
                 email : 이메일
             }
 
-            db.collection('user').doc(result.user.uid).set(유저정보);
+            db.collection('user').doc(result.user.uid).set(유저정보).then((result) => {
+                window.location.href = "/index.html";
+            })
 
 
             console.log(result);
@@ -117,7 +119,7 @@
             
          })
 
-        //  window.location.href = "/index.html";
+        
     })
 
     $('#login').click(function(){
@@ -127,16 +129,17 @@
 
         firebase.auth().signInWithEmailAndPassword(이메일, 패스워드).then((result) => {
             console.log(result.user);
-            
+            window.location.href = "/index.html";
         })
-        // window.location.href = "/index.html";
+        
     })
 
     $('#logout').click(function(){
         firebase.auth().signOut().then((result) => {
             localStorage.removeItem('user');
+            window.location.href = "/index.html";
         })
-        // window.location.href = "/index.html";
+        
     })
 
     
